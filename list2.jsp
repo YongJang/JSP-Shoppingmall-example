@@ -59,6 +59,11 @@
 				<div class="col-md-10 col-md-offset-1 center section-title">
 					<h3>상품 리스트</h3>
 				</div>
+<script>
+    function goback(){
+        window.history.back();
+    }
+</script>
 				
 <%
         if(list.size() <= 0){
@@ -93,6 +98,7 @@
    }    // end else
 %>
 			</div>
+    <button onclick="goback();" value=BACK><h4>BACK</h4></button>
 			
 			<div id="portfolio-loader" class="center">
 				<div class="loading-circle fa-spin"></div>

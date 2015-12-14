@@ -36,8 +36,13 @@
 						<li><i class="fa fa-user"></i> <strong class="strong">Cost: </strong> <%=FoodDTO.getCost()%></li>
 						<li><i class="fa fa-calendar"></i> <strong class="strong">Date: </strong> <%=FoodDTO.getRegdate()%></li>
 						<li><i class="fa fa-group"></i> <strong class="strong">Region: </strong> <%=FoodDTO.getRegion()%></li>
+                        <%
+                           if(mem_id != null){
+                           %>
 						<li><i class="fa fa-link"></i> <strong class="strong">Goods Like: </strong> <a href="./like.jsp?num=<%=FoodDTO.getNum()%>"><strong>좋아요 : <%=LikedDAO.getLikes(num)%></strong></a></li>
-                        <li><i class="fa fa-user"></i> <a href="./addCart.jsp?num=<%=FoodDTO.getNum()%>"><strong class="strong">Add Cart </strong></a> </li>    
+                        <li><i class="fa fa-user"></i> <a href="./addCart.jsp?num=<%=FoodDTO.getNum()%>"><strong class="strong">Add Cart </strong></a> </li>  
+                            <% } %>
+                           
 					</ul>
 				</div>
 				<div class="col-md-4 project-info">
@@ -60,3 +65,5 @@
 </body>
 
 </html>
+    
+   
