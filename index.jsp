@@ -1,4 +1,13 @@
 <!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="food.*,java.util.*" %>
+<jsp:useBean id="FoodDAO" class="food.FoodDAO"/>
+<jsp:useBean id="FoodDTO" class="food.FoodDTO"/>
+<%
+    Vector<FoodDTO> list = new Vector<FoodDTO>();
+    list = FoodDAO.getFoodList();
+    int vectorSize = list.size();
+%>
 <html lang="en-US">
 <head>
 	<title>Egret - HTML5 landing page</title>
@@ -123,10 +132,10 @@
 						
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="Card style">
-								<img src="images/5.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<img src="<%=list.get(0).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
 								<h4 class="feature-title color-scheme">Card style</h4>
 								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut.
+									<%=list.get(0).getName()%>
 								</p>
 								
 									<a href="#" class="fancy-button button-line btn-col small vertical">
@@ -141,10 +150,10 @@
 							
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="50+ SVG Icon included">
-								<img src="images/2.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<img src="<%=list.get(1).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
 								<h4 class="feature-title color-scheme">50+ SVG Icon included</h4>
 								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+									<%=list.get(1).getName()%>
 								</p>
 								<a href="#" class="fancy-button button-line btn-col small zoom">
 									Details
@@ -157,10 +166,10 @@
 							
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="MailChimp Ready">
-								<img src="images/3.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<img src="<%=list.get(2).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
 								<h4 class="feature-title color-scheme">MailChimp Ready</h4>
 								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+									<%=list.get(2).getName()%>
 								</p>
 								<a href="#" class="fancy-button button-line btn-col small zoom">
 									Details
@@ -173,10 +182,10 @@
 							
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="4 home style">
-								<img src="images/4.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<img src="<%=list.get(3).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
 								<h4 class="feature-title color-scheme">4 home style</h4>
 								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+									<%=list.get(3).getName()%>
 								</p>
 								<a href="#" class="fancy-button button-line btn-col small zoom">
 									Details
@@ -189,10 +198,10 @@
 							
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="Parallax Backgrounds">
-								<img src="images/5.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<img src="<%=list.get(4).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
 								<h4 class="feature-title color-scheme">Parallax Backgrounds</h4>
 								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+									<%=list.get(4).getName()%>
 								</p>
 								<a href="#" class="fancy-button button-line btn-col small zoom">
 									Details
@@ -205,10 +214,10 @@
 							
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="Ajax contact form">
-								<img src="images/6.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<img src="<%=list.get(5).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
 								<h4 class="feature-title color-scheme">Ajax contact form</h4>
 								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+									<%=list.get(5).getName()%>
 								</p>
 								<a href="#" class="fancy-button button-line btn-col small zoom">
 									Details
@@ -221,10 +230,10 @@
 							
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="unlimited Google fonts">
-								<img src="images/7.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<img src="<%=list.get(6).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
 								<h4 class="feature-title color-scheme">unlimited Google fonts</h4>
 								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+									<%=list.get(6).getName()%>
 								</p>
 								<a href="#" class="fancy-button button-line btn-col small zoom">
 									Details
@@ -237,10 +246,10 @@
 							
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="Feature heading">
-								<img src="images/8.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<img src="<%=list.get(7).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
 								<h4 class="feature-title color-scheme">Feature heading</h4>
 								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+									<%=list.get(7).getName()%>
 								</p>
 								<a href="#" class="fancy-button button-line btn-col small zoom">
 									Details
@@ -282,166 +291,6 @@
 		</div>
 	</section>
 	<!--=== Features section Ends ===-->
-	
-	<!--=== Services section Starts ===-->
-	<section id="section-services" class="services-wrap">
-		<div class="container services">
-			<div class="row">
-			
-				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3>What we do best</h3>
-				</div>
-			
-				<!-- Single Service Starts -->
-				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInLeft" data-animation-delay="700">
-					<span class="service-icon center"><i class="icon icon-basic-book-pencil fa-3x"></i></span>
-					<div class="service-desc">
-						<h4 class="service-title color-scheme">Clean Design</h4>
-						<p class="service-description justify">
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-						</p>
-					</div>
-				</div>
-				<!-- Single Service Ends -->
-				
-				<!-- Single Service Starts -->
-				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInUp" data-animation-delay="700">
-					<span class="service-icon center"><i class="icon icon-basic-paperplane fa-3x"></i></span>
-					<div class="service-desc">
-						<h4 class="service-title color-scheme">Full responsive</h4>
-						<p class="service-description justify">
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-						</p>
-					</div>
-				</div>
-				<!-- Single Service ends -->
-				
-				<!-- Single Service Starts -->
-				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInRight" data-animation-delay="700">
-					<span class="service-icon center"><i class="icon icon-basic-accelerator fa-3x"></i></span>
-					<div class="service-desc">
-						<h4 class="service-title color-scheme">Ajax contact form</h4>
-						<p class="service-description justify">
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-						</p>
-					</div>
-				</div>
-				<!-- Single Service Ends -->
-				
-				<!-- Single Service Starts -->
-				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInUp" data-animation-delay="700">
-					<span class="service-icon center"><i class="icon icon-basic-lightbulb fa-3x"></i></span>
-					<div class="service-desc">
-						<h4 class="service-title color-scheme">Mailchimp ready</h4>
-						<p class="service-description justify">
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-						</p>
-					</div>
-				</div>
-				<!-- Single Service Ends -->
-			</div>
-		</div>
-	</section>
-	<!--=== Services section Ends ===-->
-	
-	<!--=== Step-1 section Starts ===-->
-	<section id="step-1" class="section-step step-wrap">
-		<div class="container step animated" data-animation="bounceInLeft" data-animation-delay="700">
-			<div class="row">
-				<!-- Step Description Starts -->
-				<div class="col-md-8 step-desc">
-					<div class="col-md-2 center">
-						<div class="step-no">
-							<span class="no-inner">1</span>
-						</div>
-					</div>
-					
-					<div class="col-md-10 step-details">
-							<h3 class="step-title color-scheme">Work flow title here</h3>
-							<p class="step-description">Cillum laboris <strong>consequat</strong>, qui elit retro next level 
-							skateboard freegan hella. Cillum laboris consequat qui elit retro next level 
-							skateboard freegan hella. Cillum laboris consequat skateboard freegan hella</p>
-							
-							<ul class="sub-steps"> <!-- Sub steps here -->
-								<li>
-									<span class="icon fa fa-comments color-scheme"></span>
-									<span class="sub-text">skateboard freegan hella. Cillum laboris consequat qui elit</span>
-								</li>
-								<li>
-									<span class="icon fa fa-pencil-square-o color-scheme"></span>
-									<span class="sub-text">Documenting collected data</span>
-								</li>
-							</ul>
-					</div> <!-- End step-details -->
-				</div>
-				<!-- Step Description Ends -->
-				<div class="col-md-4 step-img">
-					<img src="images/note.png" alt="" /> <!-- Step Photo Here -->
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--=== Step-1 section Ends ===-->
-	
-	<!--=== Step-2 section Starts ===-->
-	<section id="step-2" class="section-step step-even step-wrap">
-		<div class="container step animated" data-animation="bounceInRight" data-animation-delay="700">
-			<div class="row">
-				<!-- Step Description Starts -->
-				<div class="col-md-8 step-desc">
-					<div class="col-md-2 center">
-						<div class="step-no">
-							<span class="no-inner">2</span>
-						</div>
-					</div>
-					
-					<div class="col-md-10 step-details">
-							<h3 class="step-title color-scheme">Work flow title here</h3>
-							<p class="step-description">Cillum laboris <strong>consequat</strong>, qui elit retro next level 
-							skateboard freegan hella. Cillum laboris consequat qui elit retro next level 
-							skateboard freegan hella. Cillum laboris consequat skateboard freegan hella</p>
-							
-							<ul class="sub-steps"> <!-- Sub steps here -->
-								<li>
-									<span class="icon fa fa-comments color-scheme"></span>
-									<span class="sub-text">skateboard freegan hella. Cillum laboris consequat qui elit</span>
-								</li>
-								<li>
-									<span class="icon fa fa-pencil-square-o color-scheme"></span>
-									<span class="sub-text">Documenting collected data</span>
-								</li>
-								
-							</ul>
-					</div><!-- End step-details -->
-				</div>
-				<!-- Step Description Ends -->
-				<div class="col-md-4 step-img">
-					<img src="images/desk.png" alt="" /> <!-- Step Photo Here -->
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--=== Step-2 section Ends ===-->
-	
-	<!--=== Video section Starts ===-->
-	<section id="section-video" class="section-video-wrap">
-		<div class="section-overlay"></div>
-		<div class="container big-video center animated" data-animation="fadeInLeft" data-animation-delay="700">
-			<div class="row">
-				<div class="col-md-12 section-title">
-					<h3>Describe with a video</h3>
-				</div>
-				<div class="col-md-10 col-md-offset-1 video-content">
-					<iframe src="http://player.vimeo.com/video/75317749?title=0&amp;byline=0&amp;portrait=0" width="400" height="240"></iframe>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--=== Video section Ends ===-->
 	
 	<!--=== ScreenShots section Starts ===-->
 	<section id="section-screenshots" class="screenshots-wrap">
@@ -571,232 +420,10 @@
 	</section>
 	<!--=== ScreenShots section Ends ===-->
 	
-	<!--=== Testimonials section Starts ===-->
-	<section id="section-testimonials" class="testimonials-wrap">
-		<div class="section-overlay"></div>
-		<div class="container testimonials center animated" data-animation="rollIn" data-animation-delay="500">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="testimonial-slider">
-						<!-- Single Testimonial Starts -->
-						<div class="testimonial">
-							<p class="comment">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu sem ante. Nullam quis risus eu 
-								purus commodo dignissim. Donec iaculis ac ex vel posuere. Sed posuere, elit vitae mattis condimentum, 
-								quam urna fringilla magna
-							</p>
-							
-							<h5 class="happy-client">Jhon Doe</h5>
-							<span class="client-info">Executive at CDF Corp.</span>
-						</div>
-						<!-- Single Testimonial Ends -->
-						
-						<!-- Single Testimonial Starts -->
-						<div class="testimonial">
-							<p class="comment">
-								Dolor sit amet, consectetur adipiscing elit. Nullam eu sem ante. Nullam quis risus eu 
-								purus commodo dignissim. Donec iaculis ac ex vel posuere. Sed posuere, elit vitae mattis condimentum, 
-								quam urna fringilla magna
-							</p>
-							
-							<h5 class="happy-client">JB Jeniffer</h5>
-							<span class="client-info">Developer at TTF Corp.</span>
-						</div>
-						<!-- Single Testimonial Ends -->
-						
-						<!-- Single Testimonial Starts -->
-						<div class="testimonial">
-							<p class="comment">
-								Consectetur adipiscing elit. Nullam eu sem ante. Nullam quis risus eu 
-								purus commodo dignissim. Donec iaculis ac ex vel posuere. Sed posuere, elit vitae mattis condimentum, 
-								quam urna fringilla magna
-							</p>
-							
-							<h5 class="happy-client">Chan Jhin</h5>
-							<span class="client-info">CEO of MutiNaTakio.</span>
-						</div>
-						<!-- Single Testimonial Ends -->
-					</div>
-					<div id="bx-pager" class="client-photos">
-						<a data-slide-index="0" href="" class="photo-hold">
-							<span class="photo-bg">
-								<img src="images/client_1.jpg" alt="" /> <!-- Client photo 1 -->
-							</span>
-						</a>
-						<a data-slide-index="1" href="" class="photo-hold">
-							<span class="photo-bg">
-								<img src="images/client_2.jpg" alt="" /> <!-- Client photo 2 -->
-							</span>
-						</a>
-						<a data-slide-index="2" href="" class="photo-hold">
-							<span class="photo-bg">
-								<img src="images/client_3.jpg" alt="" /> <!-- Client photo 3 -->
-							</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--=== Testimonials section Ends ===-->
 	
 	
-	<!--=== Pricing section Starts ===-->
-	<section id="section-pricing" class="pricing-wrap">
-		<div class="container pricing">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3>Plans & pricing</h3>
-				</div>
-				<!-- Single Price Starts -->
-				<div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="500">
-					<div class="single-pricing">
-					
-						<div class="pricing-head">
-							<h4 class="pricing-heading color-scheme">Basic</h4>
-							<div class="price">
-								<h3>
-									<span class="dollar">$</span>
-									40
-									<span class="month">/month</span>
-								</h3>
-							</div>
-						</div>
-						
-						<ul class="package-features">
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Downloads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Uploads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Email Accounts</li>
-							<li><span class="color-scheme fa fa-check"></span>Email Forwards</li>
-							<li><span class="color-scheme fa fa-close"></span>Cloud Storage</li>
-							<li><span class="color-scheme fa fa-close"></span>Voice call</li>
-							<li><span class="color-scheme fa fa-close"></span>Screen Share</li>
-						</ul>
-						<div class="sign-up">
-							<a href="#" class="fancy-button button-line btn-col zoom">
-								Sign up
-								<span class="icon">
-									<i class="fa fa-thumbs-o-up"></i>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Single Price Ends -->
-				
-				
-				<!-- Single Price Starts -->
-				<div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="700">
-					<div class="single-pricing best-pricing"> <!-- this is best-pricing -->
-					
-						<div class="pricing-head">
-							<h4 class="pricing-heading color-scheme">Advance</h4>
-							<div class="price">
-								<h3>
-									<span class="dollar">$</span>
-									60
-									<span class="month">/month</span>
-								</h3>
-							</div>
-						</div>
-						
-						<ul class="package-features">
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Downloads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Uploads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Email Accounts</li>
-							<li><span class="color-scheme fa fa-check"></span>Email Forwards</li>
-							<li><span class="color-scheme fa fa-check"></span>Cloud Storage</li>
-							<li><span class="color-scheme fa fa-close"></span>Voice call</li>
-							<li><span class="color-scheme fa fa-close"></span>Screen Share</li>
-						</ul>
-						<div class="sign-up">
-							<a href="#" class="fancy-button button-line btn-col vertical">
-								Sign up
-								<span class="icon">
-									<i class="fa fa-hand-o-up"></i>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Single Price Ends -->
-				
-				<!-- Single Price Starts -->
-				<div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="900">
-					<div class="single-pricing">
-					
-						<div class="pricing-head">
-							<h4 class="pricing-heading color-scheme">Premium</h4>
-							<div class="price">
-								<h3>
-									<span class="dollar">$</span>
-									80
-									<span class="month">/month</span>
-								</h3>
-							</div>
-						</div>
-						
-						<ul class="package-features">
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Downloads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Uploads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Email Accounts</li>
-							<li><span class="color-scheme fa fa-check"></span>Email Forwards</li>
-							<li><span class="color-scheme fa fa-check"></span>Cloud Storage</li>
-							<li><span class="color-scheme fa fa-check"></span>Voice call</li>
-							<li><span class="color-scheme fa fa-close"></span>Screen Share</li>
-						</ul>
-						<div class="sign-up">
-							<a href="#" class="fancy-button button-line btn-col rotate">
-								Sign up
-								<span class="icon">
-									<i class="fa fa-thumbs-o-up"></i>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Single Price Ends -->
-				
-				<!-- Single Price Starts -->
-				<div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="1100">
-					<div class="single-pricing">
-					
-						<div class="pricing-head">
-							<h4 class="pricing-heading color-scheme">Ultra</h4>
-							<div class="price">
-								<h3>
-									<span class="dollar">$</span>
-									100
-									<span class="month">/month</span>
-								</h3>
-							</div>
-						</div>
-						
-						<ul class="package-features">
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Downloads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Uploads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Email Accounts</li>
-							<li><span class="color-scheme fa fa-check"></span>Email Forwards</li>
-							<li><span class="color-scheme fa fa-check"></span>Cloud Storage</li>
-							<li><span class="color-scheme fa fa-check"></span>Voice call</li>
-							<li><span class="color-scheme fa fa-check"></span>Screen Share</li>
-						</ul>
-						<div class="sign-up">
-							<a href="#" class="fancy-button button-line btn-col zoom">
-								Sign up
-								<span class="icon">
-									<i class="fa fa-thumbs-o-up"></i>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Single Price Ends -->
-				
-			</div>
-		</div>
-	</section>
-	<!--=== Pricing section Ends ===-->
+	
+	
 	
 	<!--=== Subscribe section Starts ===-->
 	<section id="section-subscribe" class="subscribe-wrap">
@@ -823,39 +450,6 @@
 		</div>
 	</section>
 	<!--=== Subscribe section Ends ===-->
-	
-	
-	<!--=== Download section Starts ===-->
-	<section id="section-download" class="download-wrap">
-		<div class="container download center">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="col-md-10 col-md-offset-1 center section-title">
-						<h3>Download app</h3>
-					</div>
-					<div class="download-buttons clearfix"> <!-- Download Buttons -->
-						<a class="fancy-button button-line no-text btn-col large zoom" href="#" title="Download from App store">
-							<span class="icon">
-							<i class="fa fa-apple"></i>
-							</span>
-						</a>
-						<a class="fancy-button button-line btn-col no-text large zoom" href="#" title="Download from App store">
-							<span class="icon">
-							<i class="fa fa-android"></i>
-							</span>
-						</a>
-						<a class="fancy-button button-line btn-col no-text large zoom" href="#" title="Download from App store">
-							<span class="icon">
-							<i class="fa fa-windows"></i>
-							</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--=== Download section Ends ===-->
-	
 	
 	<!--=== Contact section Starts ===-->
 	<section id="section-contact" class="contact-wrap">
