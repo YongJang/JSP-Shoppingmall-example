@@ -5,12 +5,12 @@
 <jsp:useBean id="FoodDTO" class="food.FoodDTO"/>
 <%
     Vector<FoodDTO> list = new Vector<FoodDTO>();
-    list = FoodDAO.getFoodList();
+    list = FoodDAO.getFoodListbyRate();
     int vectorSize = list.size();
 %>
 <html lang="en-US">
 <head>
-	<title>Egret - HTML5 landing page</title>
+	<title>몰땅</title>
 	
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,12 +74,10 @@
 						<div class="collapse navbar-collapse navbar-responsive-collapse">
 							<ul class="nav navbar-nav navbar-right">
 								<li class="current"><a href="#header">Home</a></li>
-								<li><a href="#section-feature">Features</a></li>
-								<li><a href="#section-services">Services</a></li>
-								<li><a href="#step-1">Work Flow</a></li>
-								<li><a href="#section-screenshots">Screenshots</a></li>
-								<li><a href="#section-pricing">Pricing</a></li>
-								<li><a href="#section-download">Download</a></li>
+								<li><a href="#section-feature">Best</a></li>
+                                <li><a href="#section-screenshots">Newest</a></li>
+								<li><a href="#section-subscribe">Search</a></li>
+								<li><a href="#section-contact">Q & A</a></li>
 							</ul>
 						</div>
 						<!-- Main Navigation menu ends-->
@@ -95,20 +93,20 @@
 			<div class="section-overlay"></div>
 			<div class="container home">
 				<div class="row">
-					<h1 class="well-come">Fly like Egret</h1>
+					<h1 class="well-come">몰땅</h1>
 					
 					<div class="col-md-8 col-md-offset-2">
 						<p class="intro-message">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet qui dolorem</p>
 						
 						<div class="home-buttons">
-							<a href="#" class="fancy-button button-line button-white vertical">
-								Learn more
+							<a href="#section-contact" class="fancy-button button-line button-white vertical">
+								Q & A
 								<span class="icon">
-									<i class="fa fa-gear"></i>
+									<i class="fa fa-question-circle"></i>
 								</span>
 							</a>
 							<a href="#" class="fancy-button button-line button-white zoom">
-								Download now
+								제품 둘러보기
 								<span class="icon">
 									<i class="fa fa-leaf"></i>
 								</span>
@@ -133,12 +131,12 @@
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="Card style">
 								<img src="<%=list.get(0).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Card style</h4>
+								<h4 class="feature-title color-scheme">Most Popular #1</h4>
 								<p class="feature-text">
 									<%=list.get(0).getName()%>
 								</p>
 								
-									<a href="#" class="fancy-button button-line btn-col small vertical">
+									<a href="single-project-2.jsp?style=white&num=<%=list.get(0).getNum()%>" class="fancy-button button-line btn-col small vertical">
 										Details
 										<span class="icon">
 											<i class="fa fa-leaf"></i>
@@ -151,11 +149,11 @@
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="50+ SVG Icon included">
 								<img src="<%=list.get(1).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">50+ SVG Icon included</h4>
+								<h4 class="feature-title color-scheme">Most Popular #2</h4>
 								<p class="feature-text">
 									<%=list.get(1).getName()%>
 								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
+								<a href="single-project-2.jsp?style=white&num=<%=list.get(1).getNum()%>" class="fancy-button button-line btn-col small zoom">
 									Details
 									<span class="icon">
 										<i class="fa fa-leaf"></i>
@@ -167,11 +165,11 @@
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="MailChimp Ready">
 								<img src="<%=list.get(2).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">MailChimp Ready</h4>
+								<h4 class="feature-title color-scheme">Most Popular #3</h4>
 								<p class="feature-text">
 									<%=list.get(2).getName()%>
 								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
+								<a href="single-project-2.jsp?style=white&num=<%=list.get(2).getNum()%>" class="fancy-button button-line btn-col small zoom">
 									Details
 									<span class="icon">
 										<i class="fa fa-leaf"></i>
@@ -183,11 +181,11 @@
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="4 home style">
 								<img src="<%=list.get(3).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">4 home style</h4>
+								<h4 class="feature-title color-scheme">Most Popular #4</h4>
 								<p class="feature-text">
 									<%=list.get(3).getName()%>
 								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
+								<a href="single-project-2.jsp?style=white&num=<%=list.get(3).getNum()%>" class="fancy-button button-line btn-col small zoom">
 									Details
 									<span class="icon">
 										<i class="fa fa-leaf"></i>
@@ -199,11 +197,11 @@
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="Parallax Backgrounds">
 								<img src="<%=list.get(4).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Parallax Backgrounds</h4>
+								<h4 class="feature-title color-scheme">Most Popular #5</h4>
 								<p class="feature-text">
 									<%=list.get(4).getName()%>
 								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
+								<a href="single-project-2.jsp?style=white&num=<%=list.get(4).getNum()%>" class="fancy-button button-line btn-col small zoom">
 									Details
 									<span class="icon">
 										<i class="fa fa-leaf"></i>
@@ -215,11 +213,11 @@
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="Ajax contact form">
 								<img src="<%=list.get(5).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Ajax contact form</h4>
+								<h4 class="feature-title color-scheme">Most Popular #6</h4>
 								<p class="feature-text">
 									<%=list.get(5).getName()%>
 								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
+								<a href="single-project-2.jsp?style=white&num=<%=list.get(5).getNum()%>" class="fancy-button button-line btn-col small zoom">
 									Details
 									<span class="icon">
 										<i class="fa fa-leaf"></i>
@@ -231,11 +229,11 @@
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="unlimited Google fonts">
 								<img src="<%=list.get(6).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">unlimited Google fonts</h4>
+								<h4 class="feature-title color-scheme">Most Popular #7</h4>
 								<p class="feature-text">
 									<%=list.get(6).getName()%>
 								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
+								<a href="single-project-2.jsp?style=white&num=<%=list.get(6).getNum()%>" class="fancy-button button-line btn-col small zoom">
 									Details
 									<span class="icon">
 										<i class="fa fa-leaf"></i>
@@ -247,11 +245,11 @@
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="Feature heading">
 								<img src="<%=list.get(7).getImg()%>" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Feature heading</h4>
+								<h4 class="feature-title color-scheme">Most Popular #8</h4>
 								<p class="feature-text">
 									<%=list.get(7).getName()%>
 								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
+								<a href="single-project-2.jsp?style=white&num=<%=list.get(7).getNum()%>" class="fancy-button button-line btn-col small zoom">
 									Details
 									<span class="icon">
 										<i class="fa fa-leaf"></i>
@@ -293,22 +291,26 @@
 	<!--=== Features section Ends ===-->
 	
 	<!--=== ScreenShots section Starts ===-->
+    <%
+        list = FoodDAO.getFoodListbyRegdateDesc();   // 나중에 최신 상품 순으로 정렬할 예정
+        vectorSize = list.size();
+    %>
 	<section id="section-screenshots" class="screenshots-wrap">
 		<div class="container screenshots animated" data-animation="fadeInUp" data-animation-delay="1000">
 			<div class="row porfolio-container">
 				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3>Our Latest Projects</h3>
+					<h3>최신 상품 목록</h3>
 				</div>
 				<!-- Single screenshot starts -->
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="images/7.jpg" alt="" />
+							<img src="<%=list.get(0).getImg()%>" alt="" />
 							<div class="photo-overlay">
-								<h4>Wordpress theme</h4>
+								<h4><%=list.get(0).getName()%></h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="single-project.jsp?num=<%=list.get(0).getNum()%>" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 					</div>
@@ -319,29 +321,12 @@
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="images/2.jpg" alt="" />
+							<img src="<%=list.get(1).getImg()%>" alt="" />
 							<div class="photo-overlay">
-								<h4>User Interface design</h4>
+								<h4><%=list.get(1).getName()%></h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="single-project-2.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
-							</span>
-						</div>
-						
-					</div>
-				</div>
-				<!-- Single screenshot ends -->
-				
-				<!-- Single screenshot starts -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="screenshot">
-						<div class="photo-box">
-							<img src="images/3.jpg" alt="" />
-							<div class="photo-overlay">
-								<h4>PSD template design</h4>
-							</div>
-							<span class="photo-zoom">
-								<a href="single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="single-project.jsp?num=<%=list.get(1).getNum()%>" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 						
@@ -353,12 +338,12 @@
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="images/4.jpg" alt="" />
+							<img src="<%=list.get(2).getImg()%>" alt="" />
 							<div class="photo-overlay">
-								<h4>User Experience design</h4>
+								<h4><%=list.get(2).getName()%></h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="single-project-2.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="single-project.jsp?num=<%=list.get(2).getNum()%>" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 						
@@ -370,12 +355,12 @@
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="images/5.jpg" alt="" />
+							<img src="<%=list.get(3).getImg()%>" alt="" />
 							<div class="photo-overlay">
-								<h4>Page builder plugin</h4>
+								<h4><%=list.get(3).getName()%></h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="single-project.jsp?num=<%=list.get(3).getNum()%>" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 						
@@ -387,12 +372,29 @@
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="images/6.jpg" alt="" />
+							<img src="<%=list.get(4).getImg()%>" alt="" />
 							<div class="photo-overlay">
-								<h4>Corporate website</h4>
+								<h4><%=list.get(4).getName()%></h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="single-project-2.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="single-project.jsp?num=<%=list.get(4).getNum()%>" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+							</span>
+						</div>
+						
+					</div>
+				</div>
+				<!-- Single screenshot ends -->
+				
+				<!-- Single screenshot starts -->
+				<div class="col-md-4 col-sm-4 col-xs-6">
+					<div class="screenshot">
+						<div class="photo-box">
+							<img src="<%=list.get(5).getImg()%>" alt="" />
+							<div class="photo-overlay">
+								<h4><%=list.get(5).getName()%></h4>
+							</div>
+							<span class="photo-zoom">
+								<a href="single-project.jsp?num=<%=list.get(5).getNum()%>" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 						
@@ -434,12 +436,12 @@
 					<p class="subscription-success"></p>
 					<p class="subscription-failed"></p>
 					<div class="col-md-10 col-md-offset-1 center section-title">
-						<h3>Newsletter</h3>
+						<h3>Search</h3>
 					</div>
-					<form id="subscription-form">
-						<input type="email" name="EMAIL" required="required" placeholder="Your Email" class="input-email" />
-						<button type="submit" id="subscription-btn" class="fancy-button button-line button-white large zoom">
-							Subscribe
+					<form id="subscription-form" method="post" action="./list.jsp" name="s">
+						<input type="text" name="search" required="required" placeholder="Keyword" class="input-email" />
+						<button  onclick="searchClick();" id="subscription-btn" class="fancy-button button-line button-white large zoom">
+							Search
 							<span class="icon">
 								<i class="fa fa-sign-in"></i>
 							</span>
@@ -449,7 +451,14 @@
 			</div>
 		</div>
 	</section>
+                    
+<script>
+    function searchClick(){
+        document.s.submit();
+    }
+</script>
 	<!--=== Subscribe section Ends ===-->
+            
 	
 	<!--=== Contact section Starts ===-->
 	<section id="section-contact" class="contact-wrap">

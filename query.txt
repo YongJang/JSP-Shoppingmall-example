@@ -1,0 +1,367 @@
+CREATE TABLE member (
+    num                 int(11)              NOT NULL  auto_increment,
+    id                  varchar(15)          NOT NULL  ,
+    passwd              varchar(15)          NOT NULL  ,
+    name                varchar(15)          NULL      ,
+    email               varchar(30)          NULL      ,   
+    phone               varchar(15)          NULL      ,
+    zipcode             varchar(7)           NULL      ,
+    address             varchar(30)          NULL      ,
+   regdate             date                 NULL      ,
+    PRIMARY KEY ( num )
+) charset=utf8;
+
+CREATE TABLE food (
+num		int(11)		NOT NULL primary key auto_increment,
+name		varchar(20)	NOT NULL,
+cost		varchar(20)	NOT NULL,
+img		varchar(200)	NOT NULL,
+filepath	varchar(200)	NOT NULL,
+type		varchar(20)	NULL,
+region		varchar(20)	NULL,
+coupon		int(11)		NULL,
+rate		int(11)		NULL,
+regdate		date		NULL
+)charset=utf8;
+
+CREATE TABLE cart (
+memberNum		int(11)		NOT NULL,
+foodList		varchar(200)	NULL,
+foodCost		int(11)		NULL,
+totalCost		varchar(20)	NULL,
+coupon			int(11)		NULL
+)charset=utf8;
+
+
+//////////// 상품 리스트 ///////////////
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"냉동 식품 세트",
+"7,800원",
+"../assets/img/food0.jpg",
+"./GOODS/food0.jsp",
+"식료품",
+"한국",
+0,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"라면 세트",
+"6,990원",
+"../assets/img/food1.jpg",
+"./GOODS/food1.jsp",
+"식료품",
+"한국",
+1,
+0,
+NOW()
+);
+
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"맥심 모카/화이트",
+"14,950원",
+"../assets/img/food2.jpg",
+"./GOODS/food2.jsp",
+"식료품",
+"한국",
+2,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"멸균 우유 삼총사",
+"8,900원",
+"../assets/img/food3.jpg",
+"./GOODS/food3.jsp",
+"유제품",
+"한국",
+3,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"켈로그 특가 세트",
+"3,180원",
+"../assets/img/food4.jpg",
+"./GOODS/food4.jsp",
+"식료품",
+"미국",
+4,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"싱싱꿀맛 조생귤",
+"7,900원",
+"../assets/img/food5.jpg",
+"./GOODS/food5.jsp",
+"과일/채소",
+"한국",
+5,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"오리온 인기과자 모음전",
+"700원",
+"../assets/img/food6.jpg",
+"./GOODS/food6.jsp",
+"식료품",
+"한국",
+6,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"투데이넛 견과류",
+"8,900원",
+"../assets/img/food7.jpg",
+"./GOODS/food7.jsp",
+"식료품",
+"중국",
+7,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"쌀 10kg",
+"19,530원",
+"../assets/img/food8.jpg",
+"./GOODS/food8.jsp",
+"식료품",
+"한국",
+8,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"정관장 아이키커/밥이쑥쑥",
+"6,300원",
+"../assets/img/food9.jpg",
+"./GOODS/food9.jsp",
+"식료품",
+"한국",
+9,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"스팸/리챔 특가전",
+"3,680원",
+"../assets/img/food10.jpg",
+"./GOODS/food10.jsp",
+"식료품",
+"한국",
+10,
+0,
+NOW()
+);
+
+////////////////////////////////////////////////////////////////////////////////////////////
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"냉동 식품 세트",
+"7,800원",
+"./assets/img/food0.jpg",
+"./GOODS/food0.jsp",
+"식료품",
+"한국",
+0,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"라면 세트",
+"6,990원",
+"./assets/img/food1.jpg",
+"./GOODS/food1.jsp",
+"식료품",
+"한국",
+1,
+0,
+NOW()
+);
+
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"맥심 모카/화이트",
+"14,950원",
+"./assets/img/food2.jpg",
+"./GOODS/food2.jsp",
+"식료품",
+"한국",
+2,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"멸균 우유 삼총사",
+"8,900원",
+"./assets/img/food3.jpg",
+"./GOODS/food3.jsp",
+"유제품",
+"한국",
+3,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"켈로그 특가 세트",
+"3,180원",
+"./assets/img/food4.jpg",
+"./GOODS/food4.jsp",
+"식료품",
+"미국",
+4,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"싱싱꿀맛 조생귤",
+"7,900원",
+"./assets/img/food5.jpg",
+"./GOODS/food5.jsp",
+"과일/채소",
+"한국",
+5,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"오리온 인기과자 모음전",
+"700원",
+"./assets/img/food6.jpg",
+"./GOODS/food6.jsp",
+"식료품",
+"한국",
+6,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"투데이넛 견과류",
+"8,900원",
+"./assets/img/food7.jpg",
+"./GOODS/food7.jsp",
+"식료품",
+"중국",
+7,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"쌀 10kg",
+"19,530원",
+"./assets/img/food8.jpg",
+"./GOODS/food8.jsp",
+"식료품",
+"한국",
+8,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"정관장 아이키커/밥이쑥쑥",
+"6,300원",
+"./assets/img/food9.jpg",
+"./GOODS/food9.jsp",
+"식료품",
+"한국",
+9,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"스팸/리챔 특가전",
+"3,680원",
+"./assets/img/food10.jpg",
+"./GOODS/food10.jsp",
+"식료품",
+"한국",
+10,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"매일유업 멸균우유 6종",
+"9,800원",
+"./assets/img/food11.jpg",
+"./GOODS/food11.jsp",
+"유제품",
+"한국",
+11,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"크라운 인기과자 모음전",
+"3,360원",
+"./assets/img/food12.jpg",
+"./GOODS/food12.jsp",
+"식료품",
+"한국",
+12,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"농심 인기과자 모음전",
+"5,400원",
+"./assets/img/food13.jpg",
+"./GOODS/food13.jsp",
+"식료품",
+"한국",
+13,
+0,
+NOW()
+);
+
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"해태 인기과자 모음전",
+"3,8700원",
+"./assets/img/food14.jpg",
+"./GOODS/food14.jsp",
+"식료품",
+"한국",
+14,
+0,
+NOW()
+);
+
+insert into food (name,cost,img,filepath,type,region,coupon,rate,regdate) values(
+"롯데 인기과자 모음전",
+"3,810원",
+"./assets/img/food15.jpg",
+"./GOODS/food15.jsp",
+"식료품",
+"한국",
+15,
+0,
+NOW()
+);
+
+
+
