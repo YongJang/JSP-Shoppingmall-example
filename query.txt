@@ -32,6 +32,19 @@ totalCost		varchar(20)	NULL,
 coupon			int(11)		NULL
 )charset=utf8;
 
+// 좋아요 테이블
+create table liked(
+num		int(10) not null,
+id		varchar(20) not null
+)charset=utf8;
+
+
+// 장바구니 테이블
+create table cart(
+num		int(10) not null,
+id		varchar(20) not null,
+quantity	int(10) null
+)charset=utf8;
 
 //////////// 상품 리스트 ///////////////
 

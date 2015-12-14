@@ -3,12 +3,15 @@
 <%@ page import="food.*,java.util.*" %>
 <jsp:useBean id="FoodDAO" class="food.FoodDAO"/>
 <jsp:useBean id="FoodDTO" class="food.FoodDTO"/>
+<jsp:useBean id="CartDAO" class="food.CartDAO"/>
+<jsp:useBean id="CartDTO" class="food.CartDTO"/>
 <%
     String mem_id = (String)session.getAttribute("memID");
     request.setCharacterEncoding("utf-8");
-    String search = request.getParameter("search");
-    Vector<FoodDTO> list = new Vector<FoodDTO>();
-    list = FoodDAO.getFoodListwithName(search);
+    String num = request.getParameter("num");
+    Vector<CartDTO> list = new Vector<CartDTO>();
+    Vector<FoodDTO> flist = new Vector<FoodDTO>();
+    list = CartDAO.getCartbyNumandID(num,mem_id);
     int vectorSize = list.size();
 %>
 <meta charset="utf-8">
@@ -57,19 +60,19 @@
 	<div class="container screenshots animated" data-animation="fadeInUp" data-animation-delay="1000">
 			<div class="row porfolio-container">
 				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3><%=search%>에 대한 검색 결과</h3>
+					<h3>장바구니</h3>
 				</div>
 				
 <%
         if(list.size() <= 0){
 %>
                     <div class="col-md-4 col-sm-4 col-xs-6">
-                        검색 결과가 존재하지 않습니다.
+                        장바구니가 비었습니다.
                     </div>
 <%
         }else{
                 for(int i = 0; i < vectorSize; i++){
-                    FoodDTO = list.get(i);
+                    FoodDTO = FoodDAO.getFood(list.get(i).getNum());
 %>
                 <!-- Single screenshot starts -->
 				<div class="col-md-4 col-sm-4 col-xs-6">

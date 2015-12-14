@@ -10,7 +10,7 @@
 %>
     <script>
         alert("로그인을 먼저 해주세요.");
-        window.history.back();
+         window.history.back();
     </script>
 <%
    }
@@ -20,5 +20,6 @@
 %>
     
 <script>
-    location.href = "./single-project.jsp?num=<%=num%>";
+   
+    location.href = "./single-project-2.jsp?num=<%=num%>";
 </script>

@@ -4,6 +4,7 @@
 <jsp:useBean id="FoodDAO" class="food.FoodDAO"/>
 <jsp:useBean id="FoodDTO" class="food.FoodDTO"/>
 <%
+    String mem_id = (String)session.getAttribute("memID");
     Vector<FoodDTO> list = new Vector<FoodDTO>();
     list = FoodDAO.getFoodListbyRate();
     int vectorSize = list.size();
@@ -78,6 +79,17 @@
                                 <li><a href="#section-screenshots">Newest</a></li>
 								<li><a href="#section-subscribe">Search</a></li>
 								<li><a href="#section-contact">Q & A</a></li>
+<%
+   if(mem_id == null){
+%>
+                                <li><a href="./LOGIN/login.jsp">Login</a></li>
+<%
+   }else{
+%>
+                                <li><a href="./LOGIN/logout.jsp">Logout</a></li>
+<%
+   }
+%>
 							</ul>
 						</div>
 						<!-- Main Navigation menu ends-->
@@ -105,7 +117,7 @@
 									<i class="fa fa-question-circle"></i>
 								</span>
 							</a>
-							<a href="#" class="fancy-button button-line button-white zoom">
+							<a href="./list2.jsp" class="fancy-button button-line button-white zoom">
 								제품 둘러보기
 								<span class="icon">
 									<i class="fa fa-leaf"></i>

@@ -4,6 +4,7 @@
 <jsp:useBean id="FoodDAO" class="food.FoodDAO"/>
 <jsp:useBean id="FoodDTO" class="food.FoodDTO"/>
 <jsp:useBean id="LikedDAO" class="food.LikedDAO"/>
+<jsp:useBean id="CartDAO" class="food.CartDAO"/>
 <%
     String mem_id = (String)session.getAttribute("memID");
     if(mem_id == null){
@@ -16,9 +17,10 @@
    }
     String num = request.getParameter("num");
     FoodDTO = FoodDAO.getFood(Integer.parseInt(num));
-    LikedDAO.like(num,mem_id);
+    CartDAO.inOut(num,mem_id);
 %>
     
 <script>
-    location.href = "./single-project.jsp?num=<%=num%>";
+    alert("장바구니에 추가되었습니다.");
+    location.href = "./cart.jsp?num=<%=num%>";
 </script>

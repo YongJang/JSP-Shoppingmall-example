@@ -8,7 +8,7 @@
     request.setCharacterEncoding("utf-8");
     String search = request.getParameter("search");
     Vector<FoodDTO> list = new Vector<FoodDTO>();
-    list = FoodDAO.getFoodListwithName(search);
+    list = FoodDAO.getFoodList();
     int vectorSize = list.size();
 %>
 <meta charset="utf-8">
@@ -57,7 +57,7 @@
 	<div class="container screenshots animated" data-animation="fadeInUp" data-animation-delay="1000">
 			<div class="row porfolio-container">
 				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3><%=search%>에 대한 검색 결과</h3>
+					<h3>상품 리스트</h3>
 				</div>
 				
 <%
